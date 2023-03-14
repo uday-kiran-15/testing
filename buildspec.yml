@@ -1,0 +1,33 @@
+version: 0.2
+
+env:
+    variables:
+        CACHE_CONTROLS: "86400"
+        S3_BUCKET: "{{s3_bucket_url}}"
+        BUILD_FOLDER: "dist/$BUCKET_NAME"
+
+phases:
+  install:
+    commands:
+      - echo installing dependencies...
+      - npm i 
+      - npm i -g @angular/cli@8.3.25
+  build:
+    commands:
+      # - echo testing...
+      - echo building...
+      - ng build --configuration $stage
+      # - echo removing bucket objects
+      # - aws s3 rm s3://$BUCKET_NAME/ --recursive
+  post_build:
+    commands:
+      - aws s3 sync dist/ s3://$BUCKET_NAME/
+      - |
+        if [[ "$CODEBUILD_BUILD_SUCCEEDING" -eq 1 ]]; then
+          aws s3 rm s3://$BUCKET_NAME/ --recursive
+        fi
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: dist/$BUCKET_NAME*
