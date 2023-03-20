@@ -11,12 +11,13 @@ custom:
 
 provider:
   name: aws
-  region: us-west-2
+  region: us-east-1
+  # region: us-west-2
   stage: ${opt:stage, 'dev'} # Set the default stage used. Default is dev
   deploymentBucket:
     name: ${opt:s3BucketName, 'dev-test-intnl'}
   environment:
-    USERNAME: /${self:provider.stage}/user-name
-    NAME: /${self:provider.stage}/name
+    USERNAME: /${self:provider.stage}/name
+    NAME: /${self:provider.stage}/company
     region: ${self:provider.region}
     STAGE: ${self:provider.stage}

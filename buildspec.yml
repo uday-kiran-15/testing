@@ -14,6 +14,8 @@ phases:
       - npm i -g @angular/cli@8.3.25
   build:
     commands:
+      - echo generate update environemnt.ts file
+      - npm run generate-env
       # - echo testing...
       - echo building...
       - ng build --configuration $stage
