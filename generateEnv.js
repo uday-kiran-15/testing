@@ -6,7 +6,7 @@ const targetPath = './src/environments/environment.ts';
 // require('dotenv').load();
 // `environment.ts` file structure
 const envConfigFile = `export const environment = {
-    production: ${process.env.IS_PRODUCTION || false},
+    production: "${process.env.IS_PRODUCTION || false}",
     environment: "${process.env.stage || "local"}",
     userName: "${process.env.USERNAME || "I am from Dynamic Environment :D"}"
     company: "${process.env.COMPANY || "I am from Dynamic Environment :D"}"
