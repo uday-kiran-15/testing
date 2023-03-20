@@ -3,7 +3,7 @@ const fs = require('fs');
 const targetPath = './src/environments/environment.ts';
 // Load node modules
 // const colors = require('colors');
-require('dotenv').load();
+// require('dotenv').load();
 // `environment.ts` file structure
 const envConfigFile = `export const environment = {
     production: ${process.env.IS_PRODUCTION || false},
