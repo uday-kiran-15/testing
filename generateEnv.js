@@ -11,7 +11,7 @@ const envConfigFile = `export const environment = {
     userName: "${process.env.USERNAME || "I am from Dynamic Environment :D"}"
     company: "${process.env.COMPANY || "I am from Dynamic Environment :D"}"
 }`;
-writeFile(targetPath, envConfigFile, function (err) {
+fs.writeFile(targetPath, envConfigFile, function (err) {
    if (err) {
        throw console.error(err);
    } else {
