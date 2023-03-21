@@ -1,23 +1,25 @@
 const fs = require('fs');
 // Configure Angular `environment.ts` file path
-// const targetPath = './src/environments/environment.ts';
+const targetPath = './src/environments/environment.ts';
 // Load node modules
 // const colors = require('colors');
 // require('dotenv').load();
 // `environment.ts` file structure
-switch(`${process.env.stage}`){
-    case dev:
-        var targetPath = './src/environments/environment.dev.ts';
-        break;
-    case qa:
-        var targetPath = './src/environments/environment.qa.ts';
-        break;
-    case prod:
-        var targetPath = './src/environments/environment.prod.ts';
-        break;
-    default:
-        var targetPath = './src/environments/environment.ts';
-}
+
+// -------------------------------------------------------
+// switch(${process.env.stage}){
+//     case dev:
+//         var targetPath = './src/environments/environment.dev.ts';
+//         break;
+//     case qa:
+//         var targetPath = './src/environments/environment.qa.ts';
+//         break;
+//     case prod:
+//         var targetPath = './src/environments/environment.prod.ts';
+//         break;
+//     default:
+//         var targetPath = './src/environments/environment.ts';
+// }
     
 const envConfigFile = `export const environment = {
     production: "${process.env.IS_PRODUCTION || false}",
