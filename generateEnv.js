@@ -33,6 +33,7 @@ const envConfigFile = `export const environment = {
 
 
 fs.writeFile(targetPath, envConfigFile, function (err) {
+    console.log(targetPath,"targetPath");
    if (err) {
        throw console.error(err);
    } else {
