@@ -1,6 +1,6 @@
 const fs = require('fs');
 // Configure Angular `environment.ts` file path
-const targetPath = './src/environments/environment.ts';
+var targetPath;
 // Load node modules
 // const colors = require('colors');
 // require('dotenv').load();
@@ -20,13 +20,16 @@ const targetPath = './src/environments/environment.ts';
 //     default:
 //         var targetPath = './src/environments/environment.ts';
 // }
-    
+    if("${process.env.stage}" == "dev"){
+        targetPath = './src/environments/environment.dev.ts';
+    }
 const envConfigFile = `export const environment = {
     production: "${process.env.IS_PRODUCTION || false}",
     environment: "${process.env.stage || "local"}",
     userName: "${process.env.USERNAME || "I am from Dynamic Environment :D"}",
     company: "${process.env.COMPANY || "I am from Dynamic Environment :D"}"
 }`;
+
 
 
 fs.writeFile(targetPath, envConfigFile, function (err) {
