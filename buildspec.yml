@@ -19,6 +19,7 @@ phases:
       # - echo testing...
       - echo building...
       - ng build --configuration dev
+      -npm audit fix
       # - echo removing bucket objects
       # - aws s3 rm s3://$BUCKET_NAME/ --recursive
   post_build:
