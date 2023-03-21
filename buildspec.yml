@@ -27,7 +27,7 @@ phases:
         if [[ "$CODEBUILD_BUILD_SUCCEEDING" -eq 1 ]]; then
           aws s3 rm s3://$BUCKET_NAME/ --recursive
         fi
-      - aws s3 sync dist/$BUCKET_NAME s3://$BUCKET_NAME/
+      - aws s3 sync dist/ s3://$BUCKET_NAME/
       
 artifacts:
   files:
