@@ -15,7 +15,7 @@ phases:
   build:
     commands:
       - echo generate update environemnt.ts file
-      # - npm run generate-env
+      - npm run generate-env
       # - echo testing...
       - echo building...
       - ng build --configuration $stage
