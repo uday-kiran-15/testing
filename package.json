@@ -12,9 +12,9 @@
     "build:deploy:qa": "npm run build:qa && npm run deploy:qa",
     "build:deploy:prod": "npm run build:prod && npm run deploy:prod",
     "build:localhost": "ng serve",
-    "build:dev": "ng build --configuration=dev",
-    "build:qa": "ng build --configuration=qa",
-    "build:prod": "ng build --configuration=prod"
+    "build:dev": "ng build --configuration dev",
+    "build:qa": "ng build --configuration qa",
+    "build:prod": "ng build --configuration prod"
   },
   "private": true,
   "dependencies": {
@@ -26,15 +26,13 @@
     "@angular/platform-browser": "~13.0.0",
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
-    "@okta/okta-angular": "^6.0.0",
-    "@okta/okta-auth-js": "^7.0.2",
     "aws-sdk": "^2.1334.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~13.0.3",
+    "@angular-devkit/build-angular": "^13.0.3",
     "@angular/cli": "~13.0.3",
     "@angular/compiler-cli": "~13.0.0",
     "@types/jasmine": "~3.10.0",
