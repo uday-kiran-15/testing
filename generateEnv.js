@@ -21,7 +21,7 @@ var targetPath;
 //         var targetPath = './src/environments/environment.ts';
 // }
     if(`${process.env.stage}` == "dev"){
-        targetPath = './src/environments/environment.ts';
+        targetPath = './src/environments/environment.dev.ts';
     }
 const envConfigFile = `export const environment = {
     production: "${process.env.IS_PRODUCTION || false}",
