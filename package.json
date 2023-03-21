@@ -3,11 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node generateEnv.js && ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "generate-env": "node generateEnv.js"
+    "generate-env": "node generateEnv.js",
+    "build:deploy:dev": "npm run build:dev && npm run deploy:dev",
+    "build:deploy:qa": "npm run build:qa && npm run deploy:qa",
+    "build:deploy:prod": "npm run build:prod && npm run deploy:prod",
+    "build:localhost": "ng serve",
+    "build:dev": "ng build --configuration=dev",
+    "build:qa": "ng build --configuration=qa",
+    "build:prod": "ng build --configuration=prod"
   },
   "private": true,
   "dependencies": {
