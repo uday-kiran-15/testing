@@ -20,7 +20,7 @@ var targetPath;
 //     default:
 //         var targetPath = './src/environments/environment.ts';
 // }
-    if("${process.env.stage}" == dev){
+    if(`${process.env.stage}` == "dev"){
         targetPath = './src/environments/environment.dev.ts';
     }
 const envConfigFile = `export const environment = {
