@@ -45,7 +45,10 @@
                   "maximumError": "4kb"
                 }
               ],
-              "fileReplacements": [],
+              "fileReplacements": [{
+                "replace": "src/wb/environments/environment.ts",
+                "with": "src/wb/environments/environment.prod.ts"
+              }],
               "outputHashing": "all"
             },
             "dev": {
@@ -61,7 +64,12 @@
                   "maximumError": "4kb"
                 }
               ],
-              "fileReplacements": [],
+              "fileReplacements": [
+                {
+                  "replace": "src/wb/environments/environment.ts",
+                  "with": "src/wb/environments/environment.dev.ts"
+                }
+              ],
               "outputHashing": "all"
             },
             "qa": {
@@ -77,7 +85,12 @@
                   "maximumError": "4kb"
                 }
               ],
-              "fileReplacements": [],
+              "fileReplacements": [
+                {
+                  "replace": "src/wb/environments/environment.ts",
+                  "with": "src/wb/environments/environment.qa.ts"
+                }
+              ],
               "outputHashing": "all"
             },
             "development": {
