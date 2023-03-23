@@ -21,13 +21,13 @@ phases:
       - ng build --configuration $stage
       # - echo removing bucket objects
       # - aws s3 rm s3://$BUCKET_NAME/ --recursive
-  post_build:
-    commands:
-      - |
-        if [[ "$CODEBUILD_BUILD_SUCCEEDING" -eq 1 ]]; then
-          aws s3 rm s3://$BUCKET_NAME/ --recursive
-        fi
-      - aws s3 sync ./ s3://$BUCKET_NAME/
+  # post_build:
+  #   commands:
+  #     - |
+  #       if [[ "$CODEBUILD_BUILD_SUCCEEDING" -eq 1 ]]; then
+  #         aws s3 rm s3://$BUCKET_NAME/ --recursive
+  #       fi
+  #     - aws s3 sync ./ s3://$BUCKET_NAME/
       
 artifacts:
   files:
