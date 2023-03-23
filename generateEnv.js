@@ -49,50 +49,10 @@ function generateEnvironmentContent() {
     company: "${process.env.COMPANY || "I am from Dynamic Environment :D"}"
     };`
     }
-
-switch (`${process.env.ENVIRONMENT}`) {
-    case "dev":
-        (function generateEnvironment() {
-            const fs = require('fs');
-            const fileName = 'environment.dev.ts'; 
-            const content = generateEnvironmentContent();
-            process.chdir(`src/environments`); 
-            fs.writeFile(fileName, content, (err) => { (err) ? console.log(err) : console.log('env is generated!') });
-            })();
-        break;
-    case "qa":
-        (function generateEnvironment() {
-            const fs = require('fs');
-            const fileName = 'environment.qa.ts'; 
-            const content = generateEnvironmentContent();
-            process.chdir(`src/environments`); 
-            fs.writeFile(fileName, content, (err) => { (err) ? console.log(err) : console.log('env is generated!') });
-            })();
-        break;
-        
-    case "prod":
-        (function generateEnvironment() {
-            const fs = require('fs');
-            const fileName = 'environment.prod.ts'; 
-            const content = generateEnvironmentContent();
-            process.chdir(`src/environments`); 
-            fs.writeFile(fileName, content, (err) => { (err) ? console.log(err) : console.log('env is generated!') });
-            })();
-        break;
-    default:
-        (function generateEnvironment() {
-            const fs = require('fs');
-            const fileName = 'environment.ts'; 
-            const content = generateEnvironmentContent();
-            process.chdir(`src/environments`); 
-            fs.writeFile(fileName, content, (err) => { (err) ? console.log(err) : console.log('env is generated!') });
-            })();
-        break;
-}
-    // (function generateEnvironment() {
-    // const fs = require('fs');
-    // const fileName = 'environment.ts'; 
-    // const content = generateEnvironmentContent();
-    // process.chdir(`src/environments`); 
-    // fs.writeFile(fileName, content, (err) => { (err) ? console.log(err) : console.log('env is generated!') });
-    // })();
+    (function generateEnvironment() {
+    const fs = require('fs');
+    const fileName = 'environment.qa.ts'; // you can this as hard coded name, or you can use your own unique name
+    const content = generateEnvironmentContent();
+    process.chdir(`src/environments`); // This is the directory where you created the environment file. you can use your own path, but for this I used the Angular default environment directory
+    fs.writeFile(fileName, content, (err) => { (err) ? console.log(err) : console.log('env is generated!') });
+    })();
