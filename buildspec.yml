@@ -23,14 +23,14 @@ phases:
       # - aws s3 rm s3://$BUCKET_NAME/ --recursive
   post_build:
     commands:
-      # - |
-      #   if [[ "$CODEBUILD_BUILD_SUCCEEDING" -eq 1 ]]; then
-      #     aws s3 rm s3://$BUCKET_NAME/ --recursive
-      #   fi
+      - |
+        if [[ "$CODEBUILD_BUILD_SUCCEEDING" -eq 1 ]]; then
+          aws s3 rm s3://$BUCKET_NAME/ --recursive
+        fi
       - aws s3 sync dist/ s3://$BUCKET_NAME/
       
 artifacts:
   files:
     - "**/*"
   discard-paths: no
-  base-directory: dist/$BUCKET_NAME*
+  base-directory: dist/$BUCKET_NAME
